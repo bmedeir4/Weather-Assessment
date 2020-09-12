@@ -11,7 +11,7 @@ In the search bar, search city of interest. For this city of interest the curren
 
 # Set-up and installation 
 
-1. Download folder
+1. Download from Github (mutiple ways to do this, do as appropriate)
 2. Drag folder into text editor (i.e VS code)
 3. Open terminal 
 4. Insert: npm install
