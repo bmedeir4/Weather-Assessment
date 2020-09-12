@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Weather-Assessment-F</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<head>
+  <meta charset="utf-8">
+  <title>Weather App | AngularJS</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+  <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<body ng-app="weatherApp" ng-cloak ng-controller="weatherController" data-ng-init="init()">
+  
+  <!-- TAKES USER INPUT AND FINDS CITY -->
+  <div class="container">
+    <div class="search">
+      <form ng-submit="findCity()">
+        <input type="text"
+               ng-model="writtenCity"
+               name="text"
+               placeholder="Select City"/>
+        <button id="find" ng-click="findCity()">
+          <span class="material-icons">search</span>
+        </button>
+      </form>
+    </div>
+    
+    <!-- SHOWS CURRENT WEATHER FOR SEARCHED CITY -->
+    <div class="today-weather">
+      <div class="today-main">
+        <div id="city-name">{{cityName}}</div>
+        <div id="date">{{date * 1000 | date: "yyyy-MM-dd"}}</div>
+        <img ng-src={{icon}}
+             id="weather-icon"
+             alt=""/>
+        <div id="temperature"><p>{{temperature}} &#176;C</p></div>
+      </div>
+      <div class="today-info">
+        <div id="decription">{{description}}</div>
+        <div><p>Temperature<br>{{feelsLike}} &#176;C</p></div>
+        <div><p> Wind Speed <br>{{wind}} m/s</p>        </div>
+        <p id="city">
+         
+         <!-- FAVORITES BUTTONS AND REMOVE -->
+        <button class="addFavourites" ng-click="addFavorites(cityName);">Add Favourite City</button>
+        <button class="addFavouritescitytemp" ng-click="addFavorites(temperature);">Add Favourite City Temp</button>
+        <button class="addFavouritesweather" ng-click="addFavorites(description);">Add Favourite City Weather</button>
+        <button class="removeFavourites"ng-click="removeFavourites(favoritesList);">Remove from Favourites</button>
+        </p>
+        <div id="Placeholder"></div>
+        <div id="Placeholder2"></div>
+            <div class="favorites">Favorites
+        <ul id="favoritesList">  
+        </ul>
+    </div>
+      </div>
+    </div>
+    
+    <!-- SHOWS A WEATHER FORECAST FOR THE NEXT 5 DAYS -->
+    <div class="future-container">
+      
+      <!-- DATE -->
+      <div class="future-info" id="future-date" ng-repeat="date in futureData">
+        {{ date.dt * 1000 | date: "yyyy-MM-dd" }}
+      </div>
+     
+      <!-- ICON -->
+      <img ng-repeat="icon in futureData"
+           ng-src={{iconHttp}}{{icon.weather[0].icon}}{{png}}
+           class="future-info" id="future-icon"
+           alt=""/>
+      
+      <!-- TEMPERATURE -->
+      <div class="future-info" id="future-temp" ng-repeat="temp in futureData">
+        <p>{{ temp.temp.day | number:0 }} &#176;C</p>
+      </div>
+      
+      <!-- WIND -->
+      <div class="future-info" id="future-wind" ng-repeat="wind in futureData">
+        <p>{{ wind.wind_speed }} m/s</p>
+      </div>
+    </div>
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="core/version/version.js"></script>
+  <script src="core/version/version-directive.js"></script>
+  <script src="core/version/interpolate-filter.js"></script>
+</body>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

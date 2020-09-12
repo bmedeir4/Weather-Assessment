@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap');
+
+$accent-color: #db6504;;
+
+
+
+// ADDS PADDING TO THE TOTAL WIDTH
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  color: white;
+  background: #0f0c29; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #0f0c29, #302b63, #24243e) fixed;
+  background: linear-gradient(to top, #0f0c29, #302b63, #24243e) fixed;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 500px;
+  margin-top: 70px;
+  border-radius: 10px;
+}
+
+// SEARCH ROW STYLE
+
+
+.search {
+  width: 100%;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  input {
+    width: 350px;
+    height: 40px;
+    border-radius: 40px;
+    padding: 0px 50px 0px 20px;
+    border: none;
+    &:focus {
+      outline: none;
+      box-shadow: 0px 0px 10px 0px rgb(99, 152, 232);
+    }
+  }
+  button {
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    &:hover {
+      background-color: $accent-color;
+      transition: 0.5s;
+      cursor: pointer;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      background-color: #db8c04;
+      transform: scale(0.9);
+    }
+  }
+
+  #find {
+    position: relative;
+    left: -42px;
+    top: 7px;
+    color: white;
+    background-color: $accent-color;
+    width: 32px;
+    height: 32px;
+    &:hover {
+      background-color: #db8c04;
+      transition: 0.5s;
+    }
+  }
+
+  #locate {
+    position: relative;
+    top: 3px;
+  }
+
+  .material-icons {
+    font-size: 22px;
+    padding-top: 5px;
+  }
+}
+
+
+// CURRENT WEATHER CONTAINER STYLE
+
+
+.today-weather {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+
+  .today-main {
+    width: 240px;
+  }
+  #city-name {
+    font-size: 24px;
+  }
+  #date {
+
+  }
+  #temperature {
+    font-size: 44px;
+    font-weight: 500;
+    margin-top: -50px;
+  }
+  #weather-icon {
+    width: 50px;
+  }
+  .today-info {
+    color: rgba(255, 255, 255, 0.7);
+    width: 220px;
+    text-align: left;
+    padding: 0px 6px;
+
+  }
+  #decription::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+
+// FUTURE WEATHER CONTAINER STYLE
+
+
+.future-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0px 0px 10px 10px;
+  text-align: center;
+}
+
+.future-info {
+  flex: 1 0 20%;
+  margin: 0px 0px;
+  padding: 0px 0px;
+}
+
+#future-date {
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+#future-icon {
+  margin: 5px 20px 0px 20px;
+  max-width: 50px;
+}
+
+#future-temp {
+  font-weight: 500;
+  margin-top: -15px;
+}
+
+#future-wind {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 13px;
+  margin-top: -25px;
+}
