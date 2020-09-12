@@ -15,8 +15,8 @@ In the search bar, search city of interest. For this city of interest the curren
 2. Drag folder into text editor (i.e VS code)
 3. Open terminal 
 4. Insert: npm install
-5. Insert: npm serve
+5. Insert: npm run serve
 
-After the following is performed, the website should open in your browser. If not, it is a sad day for all (but mostly me)
+After the following is performed, the website should open in your browser. If not, it is a sad day for all (but mostly me).
 
 
